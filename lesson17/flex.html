@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+.artic{
+    width: 800px;
+    height: 180px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content:space-between;
+   
+}
+
+header , footer{
+   height: 50px;
+   background: #ddd;
+   text-align: center;
+   line-height: 50px;
+  
+
+}
+.container{
+   
+    display: flex;
+    /*justify-content: space-between;*/
+   height: 50px;
+   text-align: center;
+   color:white;
+   line-height: 50px; 
+
+}
+item{
+    width: 150px;
+    height: 50px;
+    background: #00bcd4;
+}
+
+item:nth-child(3){
+  order: 2;
+}
+item:nth-child(1){
+    margin: 0 10px;
+    
+    order: 1;
+    background: #03a9f4;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+</style>
+<body>
+    <div class="artic">
+    <header>
+       <h4>头部</h4> 
+    </header>
+    <div class="container">
+       <item>主内容栏自适应宽度</item>
+       <item>侧边栏1固定宽度</item>
+       <item>侧边栏2固定宽度</item>
+    </div>
+    <footer>
+       <h4>底部</h4> 
+    </footer>
+    </div>
+
+
+   
+</body>
+</html>

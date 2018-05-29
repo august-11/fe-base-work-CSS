@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+    .square{
+        width: 100px;
+        height: 100px;
+        
+        border: 5px solid #ddd;
+        border-radius: 10%;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        background: white;
+
+    }
+    .square:nth-child(2n){
+        width: 100px;
+        height: 100px;
+        
+        border: 5px solid #ddd;
+        border-radius: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        
+    }
+
+    .square:nth-child(3){
+        width: 100px;
+        height: 100px;
+        
+        border: 5px solid #ddd;
+        border-radius: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+
+    }
+   
+     
+
+    
+    .circular{
+        width: 30px;
+        height: 30px;
+        
+        background: black;
+        border-radius: 50%;
+      }
+    .circular:nth-child(3){
+       align-self: flex-end ;
+        
+    }
+    .circular:nth-child(2){
+       align-self: center ;
+        
+    }
+    .circular-2:nth-child(2){
+      align-self: flex-end;
+    }
+    .circular-3:nth-child(3){
+      align-self: auto;
+    }
+    .circular-5:nth-child(2){
+        align-self: auto;
+        background: transparent;
+    }
+    .circular-4:nth-child(4){
+        align-self: flex-end;
+    }
+    .circular-1:nth-child(1){
+        align-self: auto;
+    }
+   /* .circular-6:nth-child(5){
+        align-self: flex-end;
+    }*/
+   .square:nth-child(4)::after{
+        content:"";
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: black;
+        align-self: flex-end;
+    }
+    /*.square:nth-child(4)::before{
+        content:"";
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        align-self: auto;
+        background: black;
+    }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square">
+            <item class="circular"></item>
+        </div>
+        <div class="square">
+            <item class="circular"></item>
+            <item class="circular circular-2"></item>
+        </div>
+        <div class="square">
+            <item class="circular"></item>
+            <item class="circular"></item>
+            <item class="circular"></item>
+        </div>
+
+        <div class="square">
+            <item class="circular circular-1"></item>
+            <item class="circular circular-5"></item>
+           <item class="circular circular-3"></item>
+            <item class="circular circular-4"></item>
+            <!--<item class="circular circular-6"></item>-->
+        </div>
+        
+    </div>
+</body>
+</html>

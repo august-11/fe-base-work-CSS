@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .container{
+        display: flex;
+        height: 40px;
+    }
+    .sub{
+        width: 200px;
+        order: -1; 
+        background: burlywood;
+    }
+    .extra{
+        width: 300px;
+        background: beige;
+    }
+    .mian{
+        flex-grow: 1;
+        background: bisque;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="mian">mian</div>
+    <div class="sub">sub</div>
+    <div class="extra">extra</div> 
+    </div>
+</body>
+</html>
