@@ -1,0 +1,58 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>滚动变色的文字js特效</title> 
+</head> 
+<body> 
+<div style="width:736px;"> 
+请注意下方的文字，部分文字染成红色，且红色循环移动。 <a href="http://keleyi.com/a/bjad/bd55blos.htm" target="_blank">原文</a> 
+</div> 
+<script type="text/javascript"> 
+var message="欢迎访问柯乐义网，这里有web前端等学习资料。" 
+var neonbasecolor="#333333" 
+var neontextcolor="#ff0000" 
+var neontextcolor2 = "#ff3333" 
+var flashspeed=100 
+var flashingletters=8 
+var flashingletters2=2 
+var flashpause=0 
+var n=0 
+if (document.all||document.getElementById){ 
+document.write('<font color="'+neonbasecolor+'">') 
+for (m=0;m<message.length;m++) 
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>') 
+document.write('</font>') 
+} 
+else 
+document.write(message) 
+function crossref(number){ 
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number) 
+return crossobj 
+} 
+function neon(){ 
+if (n==0){ 
+for (m=0;m<message.length;m++) 
+crossref(m).style.color=neonbasecolor 
+} 
+crossref(n).style.color=neontextcolor 
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor 
+if (n<message.length-1) 
+n++ 
+else{ 
+n=0 
+clearInterval(flashing) 
+setTimeout("beginneon()",flashpause) 
+return 
+} 
+} 
+function beginneon(){ 
+if (document.all||document.getElementById) 
+flashing=setInterval("neon()",flashspeed) 
+} 
+beginneon() 
+</script> 
+
+<div><br /><a href="http://keleyi.com" target="_blank">keleyi.com</a></div> 
+</body> 
+</html> 

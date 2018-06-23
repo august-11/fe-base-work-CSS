@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+         
+    @keyframes  rotate-animation{
+        0%{
+            transform: translate(0px,0px);
+        }
+        25%{
+            transform: translate(20px,0px);
+        }
+        75%{
+            transform: translate(20px,20px);
+        }
+        100%{ 
+            transform: translate(0px,20px);
+        }
+    }
+    .container{
+        width: 40px;
+        height: 38px;
+        border: 1px solid goldenrod;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .floatingblock{
+        width: 20px;
+        height: 20px;
+        background: blueviolet;
+        position: absolute;
+        z-index: -1;
+        top:0;
+        left: 0;
+        animation: rotate-animation 3s cubic-bezier(0,0,1,1) infinite;
+    }
+    span{
+        font-size: 14px;
+       color: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="floatingblock"></div>
+       <span>营养</span><br/>
+       <span>之路</span>
+           
+        
+    </div>
+</body>
+</html>
